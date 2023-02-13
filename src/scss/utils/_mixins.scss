@@ -1,0 +1,13 @@
+@use '../global/colors'as *;
+
+@mixin background {
+    background-size: cover;
+    background-color: $Dark-background;
+    background-position: bottom center;
+}
+
+@mixin view($size) {
+    @media screen and (min-width:$size) {
+        @content
+    }
+}

@@ -1,16 +1,15 @@
 @use '../../scss/global/colors'as *;
+@use '../../scss/utils/_mixins.scss'as *;
 
 .home {
     background-image: url(/images/home/background-home-mobile.jpg);
-    background-size: cover;
-    background-color: $Dark-background;
-    background-position: bottom center;
+    @include background;
 
-    @media screen and (min-width:468px) {
+    @include view(428px) {
         background-image: url(/images/home/background-home-tablet.jpg);
     }
 
-    @media screen and (min-width:1024px) {
+    @include view(1024px) {
         background-image: url(/images/home/background-home-desktop.jpg);
     }
 }
