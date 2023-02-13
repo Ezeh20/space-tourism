@@ -1,0 +1,16 @@
+@use '../../scss/global/colors'as *;
+
+.home {
+    background-image: url(/images/home/background-home-mobile.jpg);
+    background-size: cover;
+    background-color: $Dark-background;
+    background-position: bottom center;
+
+    @media screen and (min-width:468px) {
+        background-image: url(/images/home/background-home-tablet.jpg);
+    }
+
+    @media screen and (min-width:1024px) {
+        background-image: url(/images/home/background-home-desktop.jpg);
+    }
+}

@@ -5,17 +5,17 @@ import styles from './Layout.module.scss'
 import Footer from './Footer/Footer'
 
 function Layout({ children }) {
-  return (
-    <div className={`${styles.main} text bg`}>
-      <Navigation />
-      {children}
-      <Footer />
-    </div>
-  )
+    return (
+        <div className={`${styles.main}`}>
+            <Navigation />
+            {children}
+            <Footer />
+        </div>
+    )
 }
 
 Layout.propTypes = {
-  children: PropTypes.element.isRequired,
+    children: PropTypes.element.isRequired,
 }
 
 export default Layout
