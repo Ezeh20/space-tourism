@@ -1,0 +1,151 @@
+@use '../../scss/utils/functions'as fn;
+@use '../../scss/global/colors'as *;
+@use '../../scss/utils/fonts'as *;
+@use '../../scss/utils/mixins'as *;
+
+.navigation {
+
+    .header {
+        width: 100%;
+        height: fn.rem(96);
+        position: sticky;
+        top: 0;
+
+        @include view(1440px) {
+            padding-top: fn.rem(40);
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-inline: 1.5rem;
+            height: fn.rem(96);
+
+            @include view(768px) {
+                column-gap: 231px;
+                padding-right: 0;
+            }
+
+            .navLists {
+                display: flex;
+                height: 100%;
+                width: 100%;
+                max-width: 850px;
+                justify-content: center;
+                text-align: center;
+                background: rgba(151, 151, 151, 0.04);
+                box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+                backdrop-filter: blur(16.5px);
+                -webkit-backdrop-filter: blur(16.5px);
+
+                @include view-max(767px) {
+                    position: fixed;
+                    right: -100%;
+                    top: 0;
+                    background: rgba(11, 13, 23, 0.62);
+                    transition: all .4s ease-in-out;
+                    backdrop-filter: blur(fn.rem(15));
+                    -webkit-backdrop-filter: blur(fn.rem(15));
+                    height: 100vh;
+                    width: fn.rem(254);
+                    padding: fn.rem(140) 0 0 fn.rem(32);
+                    font-family: $alt-font;
+                }
+
+                .allElem {
+                    display: flex;
+                    width: 100%;
+                    justify-content: center;
+                    padding: 48px 39px;
+                    column-gap: 37px;
+
+                    @include view(1440px) {
+                        column-gap: 48px;
+                    }
+
+                    @include view-max(767px) {
+                        display: initial;
+                        justify-content: initial;
+                        padding: initial;
+                    }
+
+                    .lists {
+                        display: flex;
+
+                        .links {
+                            display: flex;
+                            column-gap: fn.rem(12);
+                            color: $Basic-white;
+                            font-size: fn.rem(17);
+                            line-height: fn.rem(19);
+                            letter-spacing: fn.rem(2.7);
+                            font-weight: 200;
+                            font-family: $alt-font;
+                            opacity: .9;
+
+                            @include view(768px) {
+                                font-size: fn.rem(16);
+                                line-height: fn.rem(19.2);
+                                letter-spacing: fn.rem(2.7);
+                                font-weight: 200;
+                            }
+
+                            @include view-max(767px){
+                                margin-bottom: 32px;
+                            }
+
+                            .position {
+                                font-weight: 500;
+                                opacity: 1;
+
+                                @include view(768px) {
+                                    display: none;
+                                }
+
+                                @include view(1440px) {
+                                    display: flex;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .close {
+                    position: absolute;
+                    top: fn.rem(34);
+                    right: fn.rem(26.45);
+
+                    @include view(768px) {
+                        display: none;
+                        position: initial;
+                    }
+                }
+            }
+
+            .navListActive {
+                right: 0;
+            }
+
+            .ham {
+                @include view(768px) {
+                    display: none;
+                }
+            }
+
+        }
+
+    }
+}
+
+/**     position: fixed;
+                right: -100%;
+                top: 0;
+                background: rgba(11, 13, 23, 0.62);
+                transition: all .4s ease-in-out;
+                backdrop-filter: blur(fn.rem(15));
+                -webkit-backdrop-filter: blur(fn.rem(15));
+                height: 100vh;
+                width: fn.rem(254);
+                padding: fn.rem(140) 0 0 fn.rem(32);
+                font-family: $alt-font;*/

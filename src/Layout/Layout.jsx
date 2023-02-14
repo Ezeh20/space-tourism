@@ -9,7 +9,7 @@ function Layout({ children }) {
         <div className={`${styles.main}`}>
             <Navigation />
             {children}
-            <Footer />
+            {/** <Footer /> */}
         </div>
     )
 }

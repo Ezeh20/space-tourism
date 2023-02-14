@@ -10,4 +10,11 @@
     @media screen and (min-width:$size) {
         @content
     }
+};
+
+@mixin view-max($size) {
+    @media screen and (max-width:$size) {
+        @content
+    }
 }
+
