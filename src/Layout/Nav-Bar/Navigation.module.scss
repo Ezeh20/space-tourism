@@ -23,15 +23,18 @@
             height: fn.rem(96);
 
             @include view(768px) {
-                column-gap: 231px;
+                column-gap: fn.rem(231);
                 padding-right: 0;
+            }
+            @include view(1440px){
+                padding-left: fn.rem(55);
             }
 
             .navLists {
                 display: flex;
                 height: 100%;
                 width: 100%;
-                max-width: 850px;
+                max-width: fn.rem(850);
                 justify-content: center;
                 text-align: center;
                 background: rgba(151, 151, 151, 0.04);
@@ -57,11 +60,11 @@
                     display: flex;
                     width: 100%;
                     justify-content: center;
-                    padding: 48px 39px;
-                    column-gap: 37px;
+                    padding: fn.rem(48) fn.rem(39);
+                    column-gap: fn.rem(37);
 
                     @include view(1440px) {
-                        column-gap: 48px;
+                        column-gap: fn.rem(48);
                     }
 
                     @include view-max(767px) {
@@ -91,8 +94,8 @@
                                 font-weight: 200;
                             }
 
-                            @include view-max(767px){
-                                margin-bottom: 32px;
+                            @include view-max(767px) {
+                                margin-bottom: fn.rem(32);
                             }
 
                             .position {
@@ -137,15 +140,3 @@
 
     }
 }
-
-/**     position: fixed;
-                right: -100%;
-                top: 0;
-                background: rgba(11, 13, 23, 0.62);
-                transition: all .4s ease-in-out;
-                backdrop-filter: blur(fn.rem(15));
-                -webkit-backdrop-filter: blur(fn.rem(15));
-                height: 100vh;
-                width: fn.rem(254);
-                padding: fn.rem(140) 0 0 fn.rem(32);
-                font-family: $alt-font;*/
