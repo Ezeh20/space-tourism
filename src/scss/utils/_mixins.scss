@@ -1,4 +1,7 @@
 @use '../global/colors'as *;
+@use '../utils/functions'as fn;
+@use '../utils/fonts'as *;
+
 
 @mixin background {
     background-size: cover;
@@ -10,7 +13,9 @@
     @media screen and (min-width:$size) {
         @content
     }
-};
+}
+
+;
 
 @mixin view-max($size) {
     @media screen and (max-width:$size) {
@@ -18,3 +23,152 @@
     }
 }
 
+;
+
+@mixin headings {
+    font-family: $base-font;
+    color: $Basic-white;
+    text-align: center;
+    font-weight: 100;
+}
+
+@mixin menu {
+    font-size: fn.rem(16);
+    line-height: fn.rem(19.2);
+    letter-spacing: fn.rem(2.7);
+    font-family: $alt-font;
+    text-align: center;
+
+    @include view(768px) {
+        font-size: fn.rem(20);
+        line-height: fn.rem(24);
+        letter-spacing: fn.rem(3.38);
+    }
+
+    @include view(1440px) {
+        font-size: fn.rem(28);
+        line-height: fn.rem(33.6);
+        letter-spacing: fn.rem(4.72);
+        text-align: left;
+    }
+}
+
+;
+
+@mixin menu2 {
+    font-size: fn.rem(14);
+    line-height: fn.rem(16.8);
+    letter-spacing: fn.rem(2.36);
+    font-family: $alt-font;
+    text-align: center;
+
+    @include view(768px) {
+        font-size: fn.rem(16);
+        line-height: fn.rem(19.2);
+        letter-spacing: fn.rem(2.7);
+    }
+}
+
+@mixin text {
+    font-size: fn.rem(15);
+    line-height: fn.rem(25);
+    font-family: $alt-text;
+    text-align: center;
+
+    @include view(768px) {
+        font-size: fn.rem(16);
+        line-height: fn.rem(28);
+    }
+
+    @include view(1440px) {
+        font-size: fn.rem(18);
+        line-height: fn.rem(32);
+        text-align: left;
+    }
+}
+
+@mixin heading {
+    font-size: fn.rem(80);
+    line-height: fn.rem(100);
+    @include headings();
+
+    @include view(768px) {
+        font-size: fn.rem(150);
+        line-height: fn.rem(150);
+    }
+
+    @include view(1440px) {
+        line-height: fn.rem(171.9);
+        text-align: left;
+    }
+}
+
+@mixin heading2 {
+    font-size: fn.rem(56);
+    line-height: fn.rem(64.18);
+    @include headings();
+
+    @include view(768px) {
+        font-size: fn.rem(80);
+        line-height: fn.rem(91.68);
+    }
+
+    @include view(1440px) {
+        font-size: fn.rem(100);
+        line-height: fn.rem(114.6);
+        text-align: left;
+    }
+}
+
+@mixin heading3 {
+    font-size: fn.rem(24);
+    line-height: fn.rem(27.5);
+    @include headings();
+
+    @include view(768px) {
+        font-size: fn.rem(40);
+        line-height: fn.rem(45.84);
+    }
+
+    @include view(1440px) {
+        font-size: fn.rem(56);
+        line-height: fn.rem(64.18);
+        text-align: left;
+    }
+}
+
+@mixin heading4 {
+    font-size: fn.rem(16);
+    line-height: fn.rem(18.3);
+    opacity: .542;
+    @include headings();
+
+    @include view(768px) {
+        font-size: fn.rem(24);
+        line-height: fn.rem(27.5);
+    }
+
+    @include view(1440px) {
+        font-size: fn.rem(32);
+        line-height: fn.rem(36.67);
+        text-align: left;
+    }
+}
+
+/********************************************************display***********************************/
+@mixin flex($direction, $gapC, $gapR) {
+    display: flex;
+    flex-direction: $direction;
+    column-gap: $gapC;
+    row-gap: $gapR;
+}
+
+
+@mixin flexAd($direction, $gapC, $gapR, $alignItems, $justifyContent) {
+    display: flex;
+    flex-direction: $direction;
+    column-gap: $gapC;
+    row-gap: $gapR;
+    align-items: $alignItems;
+    justify-content: $justifyContent;
+}

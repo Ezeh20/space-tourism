@@ -1,6 +1,8 @@
 @use '../utils'as utils;
 @use './colors'as *;
 @use '../utils/functions'as fn;
+@use '../utils/fonts'as *;
+@use '../utils/mixins'as *;
 
 
 html {
@@ -44,7 +46,8 @@ button {
   outline: none;
   border: none;
   background-color: transparent;
-  &:hover{
+
+  &:hover {
     cursor: pointer;
   }
 }
@@ -64,4 +67,33 @@ body {
   font-family: utils.$base-font;
   font-weight: 400;
   min-height: 100vh;
+  color: $Text-color;
+}
+
+.heading {
+  @include heading
+}
+
+.heading2 {
+  @include heading2
+}
+
+.heading3 {
+  @include heading3
+}
+
+.heading4 {
+  @include heading4
+}
+
+.text {
+  @include text
+}
+
+.menu {
+  @include menu
+}
+
+.menu2 {
+  @include menu2
 }

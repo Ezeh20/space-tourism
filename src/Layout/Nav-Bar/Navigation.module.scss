@@ -10,7 +10,6 @@
         height: fn.rem(96);
         position: sticky;
         top: 0;
-
         @include view(1440px) {
             padding-top: fn.rem(40);
         }
@@ -47,7 +46,7 @@
                     right: -100%;
                     top: 0;
                     background: rgba(11, 13, 23, 0.62);
-                    transition: all .4s ease-in-out;
+                    transition: all .3s ease-in-out;
                     backdrop-filter: blur(fn.rem(15));
                     -webkit-backdrop-filter: blur(fn.rem(15));
                     height: 100vh;
