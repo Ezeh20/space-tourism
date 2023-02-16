@@ -143,11 +143,19 @@
 }
 
 @mixin heading4 {
+    font-size: fn.rem(28);
+    line-height: fn.rem(32.09);
+    @include headings();
+
+    @include view(1440px) {
+        text-align: left;
+    }
+}
+
+@mixin heading5 {
     font-size: fn.rem(16);
     line-height: fn.rem(18.3);
-    font-family: $alt-font;
-    letter-spacing: fn.rem(2.7);
-    color: $Basic-white;
+    @include headings();
 
     @include view(768px) {
         font-size: fn.rem(24);

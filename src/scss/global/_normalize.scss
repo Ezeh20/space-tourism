@@ -91,6 +91,10 @@ body {
   @include heading4
 }
 
+.heading5 {
+  @include heading5
+}
+
 .text {
   @include text
 }

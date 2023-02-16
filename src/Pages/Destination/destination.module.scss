@@ -35,9 +35,7 @@
 
             .ContentTop {
                 width: 100%;
-                display: flex;
-                align-content: center;
-                justify-content: center;
+                @include flexAd(_, _, _, center, center);
 
                 .planet {
                     max-width: 50%;
@@ -52,18 +50,14 @@
             .contentBottom {
 
                 .desBtnContainer {
-                    display: flex;
-                    flex-direction: column;
+                    @include flex(column,_, fn.rem(20));
 
                     .desBtn {
-                        display: flex;
-                        column-gap: 26px;
+                        @include flexAd(_, fn.rem(26), _, _, center);
 
                         .desButton {
+                            @include flex(column, _, fn.rem(8));
                             color: $Text-color;
-                            display: flex;
-                            flex-direction: column;
-                            row-gap: 8px;
 
                             &:hover {
                                 .desLine {
@@ -90,6 +84,13 @@
                         }
                     }
 
+                    .planetData{
+                        
+                        .desHeading{
+                            padding-bottom: fn.rem(10);
+                            font-weight: 100;
+                        }
+                    }
                 }
             }
         }
