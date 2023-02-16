@@ -54,6 +54,7 @@ function Navigation() {
               {active ? '' : <img src={ham} alt="ham" />}
             </button>
           </div>
+          <div className={styles.strike} />
         </nav>
       </header>
     </div>

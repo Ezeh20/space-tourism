@@ -20,6 +20,7 @@
             padding-inline: 1.5rem;
             height: fn.rem(96);
             z-index: 10;
+            position: relative;
 
             @include view(768px) {
                 column-gap: fn.rem(231);
@@ -69,6 +70,7 @@
                 .lists {
                     @include flexAd(column, 0, 0, _, space-between);
                     height: 100%;
+
 
                     @include view-max(767px) {
                         height: initial;
@@ -141,6 +143,7 @@
                     }
                 }
 
+
             }
 
             .navListActive {
@@ -150,6 +153,28 @@
             .ham {
                 @include view(768px) {
                     display: none;
+                }
+            }
+
+            .strike {
+                position: absolute;
+                display: none;
+
+                @include view(1440px) {
+                    display: inline;
+                    width: 33%;
+                    height: fn.rem(1);
+                    right: 50rem;
+                    background-color: #fff;
+                    opacity: .25;
+                }
+
+                @include view(1500px) {
+                    width: 35%;
+                }
+
+                @include view(1900px) {
+                    width: 38%;
                 }
             }
 

@@ -29,7 +29,7 @@
 
         @include view(1440px) {
             @include flex(row, 386px, _);
-            margin-top: fn.rem(255);
+            margin-top: fn.rem(251);
 
         }
 
