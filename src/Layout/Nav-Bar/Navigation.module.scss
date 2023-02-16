@@ -16,7 +16,7 @@
         }
 
         .nav {
-            @include flexAd(row, 0, 0, center, space-between);
+            @include flexAd(row, _, _, center, space-between);
             padding-inline: 1.5rem;
             height: fn.rem(96);
             z-index: 10;

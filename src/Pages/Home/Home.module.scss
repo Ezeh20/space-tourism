@@ -19,6 +19,19 @@
         margin-top: fn.rem(58);
         padding-inline: 1.5rem;
         @include flex(column, 0, fn.rem(81));
+        width: 100%;
+        justify-content: center;
+
+        @include view(768px) {
+            row-gap: fn.rem(156);
+            margin-top: fn.rem(106);
+        }
+
+        @include view(1440px) {
+            @include flex(row, 386px, _);
+            margin-top: fn.rem(255);
+
+        }
 
         .homeTop {
             @include flex(column, 0, fn.rem(16));
@@ -27,17 +40,41 @@
                 @include flex(column, 0, fn.rem(24));
             }
 
+            .headingHome {
+                padding-block: .5rem;
+
+                @include view(768px) {
+                    padding-block: 1rem;
+                }
+            }
+
             .homeContent {
                 width: 100%;
                 max-width: 444px;
                 align-self: center;
+
+                @include view(1440px) {
+                    align-self: initial
+                }
             }
         }
 
         .homeBottom {
-            @include flex(column, 0, 0);
+            display: flex;
             width: max-content;
             align-self: center;
+            align-items: start;
+            justify-content: center;
+            height: 100%;
+            padding-bottom: fn.rem(48);
+
+            @include view(768px) {
+                padding-bottom: 5rem;
+            }
+
+            @include view(1440px) {
+                padding-bottom: 0;
+            }
 
             .explore {
                 @include flexAd(column, 0, 0, center, center);
@@ -46,7 +83,17 @@
                 width: fn.rem(150);
                 height: fn.rem(150);
                 border-radius: 50%;
-               
+                justify-content: center;
+
+                @include view(768px) {
+                    width: fn.rem(242);
+                    height: fn.rem(242);
+                }
+
+                @include view(1440px) {
+                    width: fn.rem(274);
+                    height: fn.rem(274);
+                }
 
                 &:hover {
                     cursor: pointer;
@@ -59,6 +106,10 @@
                     line-height: fn.rem(22.92);
                     font-weight: 400;
                     font-family: $base-font;
+
+                    @include view(768px) {
+                        font-size: fn.rem(32);
+                    }
                 }
 
             }
@@ -66,13 +117,24 @@
             &:hover .explore::before {
                 content: '';
                 position: absolute;
-                width: 200px;
-                height: 200px;
+                width: 250px;
+                height: 250px;
                 background-color: inherit;
                 border-radius: inherit;
                 opacity: .2;
                 z-index: 1;
                 transition: inherit;
+
+                @include view(768px) {
+                    width: fn.rem(392);
+                    height: fn.rem(392);
+                }
+
+                @include view(1440px) {
+                    width: fn.rem(450);
+                    height: fn.rem(450);
+                }
+
             }
         }
     }

@@ -80,6 +80,11 @@
         line-height: fn.rem(28);
     }
 
+    @include view(1024px) {
+        font-size: fn.rem(18);
+        line-height: fn.rem(32);
+    }
+
     @include view(1440px) {
         font-size: fn.rem(18);
         line-height: fn.rem(32);
