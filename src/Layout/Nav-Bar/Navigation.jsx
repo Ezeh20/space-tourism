@@ -14,9 +14,9 @@ function Navigation() {
     <div className={styles.navigation}>
       <header className={styles.header}>
         <nav className={styles.nav}>
-          <div className={styles.logo}>
+          <NavLink to="/" className={styles.logo}>
             <img src={logo} alt="logo" />
-          </div>
+          </NavLink>
           <ul
             className={`${
               active

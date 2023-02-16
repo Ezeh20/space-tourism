@@ -145,8 +145,9 @@
 @mixin heading4 {
     font-size: fn.rem(16);
     line-height: fn.rem(18.3);
-    opacity: .542;
-    @include headings();
+    font-family: $alt-font;
+    letter-spacing: fn.rem(2.7);
+    color: $Basic-white;
 
     @include view(768px) {
         font-size: fn.rem(24);

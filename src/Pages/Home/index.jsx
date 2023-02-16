@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 import Layout from '../../Layout/Layout'
 import styles from './Home.module.scss'
 import { homeData } from './home-data'
@@ -16,9 +17,9 @@ function Home() {
             <p className={`${styles.homeContent} text`}>{homeData.content}</p>
           </div>
           <div className={styles.homeBottom}>
-            <div className={styles.explore}>
+            <NavLink to="/destination" className={styles.explore}>
               <p className={styles.exploreText}>EXPLORE</p>
-            </div>
+            </NavLink>
           </div>
         </div>
       </Layout>
