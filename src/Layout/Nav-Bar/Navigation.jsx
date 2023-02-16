@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import logo from '../../../public/images/shared/logo.svg'
 import ham from '../../../public/images/shared/icon-hamburger.svg'
 import close from '../../../public/images/shared/icon-close.svg'
@@ -24,18 +24,25 @@ function Navigation() {
                 : `${styles.navLists}`
             }`}
           >
-            <div className={styles.allElem}>
-              {navElements.map((elements) => {
-                return (
-                  <li key={elements.id} className={styles.lists}>
-                    <Link to={elements.to} className={styles.links}>
-                      <div className={styles.position}>{elements.position}</div>
-                      <div className={styles.elem}>{elements.elem}</div>
-                    </Link>
-                  </li>
-                )
-              })}
-            </div>
+            {navElements.map((elements) => {
+              return (
+                <li key={elements.id} className={styles.lists}>
+                  <NavLink
+                    to={elements.to}
+                    className={({ isActive }) => {
+                      return isActive
+                        ? `${`${styles.links} ${styles.active}`}`
+                        : `${styles.links}`
+                    }}
+                  >
+                    <div className={styles.position}>{elements.position}</div>
+                    <div className={styles.elem}>{elements.elem}</div>
+                  </NavLink>
+                  <div className={styles.line} />
+                </li>
+              )
+            })}
+
             <div className={styles.close}>
               <button type="button" onClick={toggleMenu}>
                 <img src={close} alt="close" />
@@ -54,3 +61,5 @@ function Navigation() {
 }
 
 export default Navigation
+
+/** styles.links */
