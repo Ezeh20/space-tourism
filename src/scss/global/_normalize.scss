@@ -16,6 +16,18 @@ html {
   scroll-behavior: smooth;
 }
 
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(transparent, #fff9);
+  border-radius: 20px;
+  &:hover{
+    background: linear-gradient(transparent, #fff);
+  }
+}
+
 *,
 *::before,
 *::after {
@@ -105,4 +117,8 @@ body {
 
 .menu2 {
   @include menu2
+}
+
+.menu3 {
+  @include menu3
 }

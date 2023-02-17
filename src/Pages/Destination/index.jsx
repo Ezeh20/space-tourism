@@ -38,7 +38,7 @@ function Destination() {
                           currentDestination === id
                             ? `${`${styles.desButton} ${styles.btnActive}`}`
                             : `${styles.desButton}`
-                        }   menu2`}
+                        }   menu3`}
                         onClick={() => setCurrentDestionaton(id)}
                       >
                         <div>{des}</div>
@@ -60,14 +60,14 @@ function Destination() {
                   <p className={`${styles.desText} text`}>{description}</p>
                 </div>
               </div>
-              <div className={styles.desLine} />
+              <div className={styles.desLineBelow} />
               <div className={styles.desDuration}>
                 <div className={styles.distance}>
-                  <p className="menu2">AVG. DISTANCE</p>
+                  <p className="menu3">AVG. DISTANCE</p>
                   <p className="heading4">{distance.toLocaleUpperCase()}</p>
                 </div>
-                <div className={styles.time}>
-                  <p className="menu2">EST. TRAVEL TIME</p>
+                <div className={styles.distance}>
+                  <p className="menu3">EST. TRAVEL TIME</p>
                   <p className="heading4">{travel.toLocaleUpperCase()}</p>
                 </div>
               </div>

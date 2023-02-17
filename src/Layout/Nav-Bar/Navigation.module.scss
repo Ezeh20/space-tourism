@@ -17,7 +17,7 @@
 
         .nav {
             @include flexAd(row, _, _, center, space-between);
-            padding-inline: 1.5rem;
+            padding-inline: fn.rem(24);
             height: fn.rem(96);
             z-index: 10;
             position: relative;
@@ -25,6 +25,7 @@
             @include view(768px) {
                 column-gap: fn.rem(231);
                 padding-right: 0;
+                padding-left: fn.rem(39);
             }
 
             @include view(1440px) {

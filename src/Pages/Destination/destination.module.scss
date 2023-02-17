@@ -17,13 +17,33 @@
 
     .destinationCover {
         margin-top: fn.rem(34);
-        padding-inline: 1.5rem;
+        padding-inline: 24px;
         @include flex(column, _, fn.rem(32));
+
+        @include view(768px) {
+            margin-top: fn.rem(40);
+            padding-inline: 38px;
+        }
+
+        @include view(1440px) {
+            margin-top: fn.rem(110);
+            margin-inline: fn.rem(166.5);
+        }
+
+        @include view(1900px) {
+            margin-inline: fn.rem(350)
+        }
+
 
         .desTitle {
             @include flexAd(_, fn.rem(18), _, _, center);
-            text-align: center;
             text-transform: uppercase;
+
+            @include view(768px) {
+                @include flexAd(_, fn.rem(18), _, _, left);
+            }
+
+            @include view(1440px) {}
         }
 
         .desTitle span {
@@ -33,9 +53,24 @@
         .desContent {
             @include flexAd(column, _, fn.rem(26), center, center);
 
+            @include view(768px) {
+                row-gap: fn.rem(53);
+            }
+
+            @include view(1440px) {
+                @include flex(row, 157px, _);
+                align-items: center;
+                margin-top: fn.rem(64);
+            }
+
             .ContentTop {
                 width: 100%;
                 @include flexAd(_, _, _, center, center);
+
+                @include view(1440px) {
+                    justify-content: flex-start;
+                    width: max-content;
+                }
 
                 .planet {
                     max-width: 50%;
@@ -48,12 +83,30 @@
             }
 
             .contentBottom {
+                @include view(1440px) {
+                    width: 445px;
+                }
+
 
                 .desBtnContainer {
-                    @include flex(column,_, fn.rem(20));
+                    @include flex(column, _, fn.rem(20));
+
+
+                    @include view(768px) {
+                        row-gap: fn.rem(32)
+                    }
+
 
                     .desBtn {
                         @include flexAd(_, fn.rem(26), _, _, center);
+
+                        @include view(768px) {
+                            column-gap: fn.rem(36)
+                        }
+
+                        @include view(1440px) {
+                            justify-content: flex-start
+                        }
 
                         .desButton {
                             @include flex(column, _, fn.rem(8));
@@ -84,12 +137,49 @@
                         }
                     }
 
-                    .planetData{
-                        
-                        .desHeading{
+                    .planetData {
+
+                        .desHeading {
                             padding-bottom: fn.rem(10);
                             font-weight: 100;
                         }
+
+                        .desText {
+                            width: 100%;
+                            max-width: 573px;
+                        }
+                    }
+                }
+
+                .desLineBelow {
+                    width: 100%;
+                    height: 1px;
+                    margin-block: 32px;
+                    background-color: $abstract;
+
+                    @include view(768px) {
+                        margin-top: fn.rem(49);
+                        margin-bottom: fn.rem(28);
+                    }
+
+                }
+
+                .desDuration {
+                    margin-bottom: fn.rem(62);
+                    @include flex(column, _, fn.rem(32));
+
+                    @include view(768px) {
+                        @include flexAd(row, fn.rem(100), _, center, center);
+                        margin-bottom: fn.rem(62);
+                    }
+
+                    @include view(1440px) {
+                        justify-content: flex-start
+                    }
+
+                    .distance {
+                        @include flex(column, _, fn.rem(12));
+
                     }
                 }
             }

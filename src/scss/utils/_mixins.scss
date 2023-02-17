@@ -56,6 +56,26 @@
 ;
 
 @mixin menu2 {
+    font-size: fn.rem(16);
+    line-height: fn.rem(19.2);
+    letter-spacing: fn.rem(2.7);
+    font-family: $alt-font;
+    text-align: center;
+
+    @include view(768px) {
+        font-size: fn.rem(20);
+        line-height: fn.rem(24);
+        letter-spacing: fn.rem(3.38);
+        text-align: left;
+    }
+    @include view(1440px) {
+        font-size: fn.rem(28);
+        line-height: fn.rem(33.6);
+        letter-spacing: fn.rem(4.2);
+    }
+}
+
+@mixin menu3 {
     font-size: fn.rem(14);
     line-height: fn.rem(16.8);
     letter-spacing: fn.rem(2.36);
@@ -67,6 +87,10 @@
         line-height: fn.rem(19.2);
         letter-spacing: fn.rem(2.7);
     }
+    @include view(1440px) {
+        text-align: initial;
+    }
+    
 }
 
 @mixin text {
