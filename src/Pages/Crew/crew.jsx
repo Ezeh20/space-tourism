@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { wrap } from '@popmotion/popcorn'
 import data from '../../../data.json'
 import styles from './cre.module.scss'
+import Pagination from './pagination'
 
 const pages = [0, 1, 2, 3]
 function CrewContent({ currentPage, direction, setCurrentPage }) {
@@ -63,7 +64,9 @@ function CrewContent({ currentPage, direction, setCurrentPage }) {
 
   return (
     <div className={styles.crewContainer}>
-      <p>Pick your destination</p>
+      <p className={`${styles.crewTitle} menu2`}>
+        <span>02</span>MEET YOUR CREW
+      </p>
       <div className={styles.crewContent}>
         <AnimatePresence initial={false} custom={direction}>
           <div>
@@ -91,10 +94,18 @@ function CrewContent({ currentPage, direction, setCurrentPage }) {
                       custom={direction}
                       className={styles.crewTop}
                     >
-                      <img src={webp} alt={`${name}`} />
+                      <img
+                        src={webp}
+                        alt={`${name}`}
+                        className={styles.crewImg}
+                      />
+                      <div className={styles.crewLine} />
                     </motion.div>
                     <div className={styles.crewBottom}>
-                      <div className={styles.page}>pp</div>
+                      <Pagination
+                        currentPage={currentPage}
+                        setCurrentPage={setCurrentPage}
+                      />
                       <motion.div
                         data-page={currentPage}
                         variants={variants}
@@ -118,10 +129,12 @@ function CrewContent({ currentPage, direction, setCurrentPage }) {
                         className={styles.crewPerson}
                       >
                         <div className={styles.personTop}>
-                          <p>{role}</p>
-                          <p>{name}</p>
+                          <p className={`${styles.crewRole} heading5`}>
+                            {role.toUpperCase()}
+                          </p>
+                          <p className="heading3">{name.toUpperCase()}</p>
                         </div>
-                        <p>{bio}</p>
+                        <p className={`${styles.crewBio} text`}>{bio}</p>
                       </motion.div>
                     </div>
                   </div>

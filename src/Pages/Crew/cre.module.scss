@@ -1,0 +1,68 @@
+@use '../../scss/global/colors'as *;
+@use '../../scss/utils/_mixins.scss'as *;
+@use '../../scss/utils/functions'as fn;
+@use '../../scss/utils/fonts'as *;
+
+.crewContainer {
+    margin-inline: fn.rem(24);
+    @include flex(column, _, fn.rem(32));
+    overflow: hidden;
+
+    .crewTitle {
+        @include flexAd(_, fn.rem(16), _, _, center);
+    }
+
+    .crewTitle span {
+        opacity: .5;
+    }
+
+    .crewContent {
+
+        .crewData {
+            @include flex(column, _, fn.rem(32));
+
+            .crewTop {
+                @include flex(column, _, _);
+
+                .crewImg {
+                    width: 100%;
+                    height: 223px;
+                    object-fit: contain;
+                    align-self: center;
+                }
+
+                .crewLine {
+                    width: 100%;
+                    height: 1px;
+                    background-color: $abstract;
+                }
+            }
+
+            .crewBottom {
+                @include flex(column, _, fn.rem(32));
+
+                .crewPerson {
+                    @include flex(column, _, fn.rem(16));
+
+                    .personTop {
+                        @include flex(column, _, fn.rem(8));
+
+                        .crewRole {
+                            opacity: .5;
+                        }
+
+                    }
+
+                    .crewBio {
+                        width: 327px;
+                        align-self: center;
+
+                        @include view-max(350px) {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

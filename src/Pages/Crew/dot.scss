@@ -1,0 +1,29 @@
+@use '../../scss/global/colors'as *;
+
+.dot-click {
+  
+    cursor: pointer;
+
+    .dot {
+        margin-right: 16px;
+        width: 10px;
+        height: 10px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        position: relative;
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .dot-highlight {
+            background: $Basic-white;
+            border-radius: 50%;
+            width: 14px;
+            height: 14px;
+            position: absolute;
+            top: -2px;
+            left: -2px;
+        }
+    }
+}

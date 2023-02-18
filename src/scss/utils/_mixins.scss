@@ -60,6 +60,7 @@
     line-height: fn.rem(19.2);
     letter-spacing: fn.rem(2.7);
     font-family: $alt-font;
+    color: $Basic-white;
     text-align: center;
 
     @include view(768px) {
