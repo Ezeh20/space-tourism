@@ -1,0 +1,17 @@
+@use '../../scss/global/colors'as *;
+@use '../../scss/utils/_mixins.scss'as *;
+@use '../../scss/utils/functions'as fn;
+@use '../../scss/utils/fonts'as *;
+
+.crew {
+    background-image: url(/public/images/crew/background-crew-mobile.jpg);
+    @include background;
+
+    @include view(428px) {
+        background-image: url(/public/images/crew/background-crew-tablet.jpg);
+    }
+
+    @include view(1024px) {
+        background-image: url(/public/images/crew/background-crew-desktop.jpg);
+    }
+}

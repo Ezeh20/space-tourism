@@ -1,12 +1,19 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import { motion } from 'framer-motion'
 import Layout from '../../Layout/Layout'
 import styles from './Home.module.scss'
 import { homeData } from './home-data'
 
 function Home() {
   return (
-    <div className={styles.home}>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      exit={{ opacity: 0 }}
+      className={styles.home}
+    >
       <Layout>
         <div className={styles.homeCover}>
           <div className={styles.homeTop}>
@@ -23,7 +30,7 @@ function Home() {
           </div>
         </div>
       </Layout>
-    </div>
+    </motion.div>
   )
 }
 
