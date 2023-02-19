@@ -8,8 +8,29 @@
     @include flex(column, _, fn.rem(32));
     overflow: hidden;
 
+    @include view(768px) {
+        margin-top: fn.rem(40);
+        margin-inline: fn.rem(39);
+        row-gap: fn.rem(60)
+    }
+
+    @include view(1440px) {
+        margin-inline: fn.rem(166.5);
+        margin-top: fn.rem(110);
+        row-gap: 0;
+    }
+
+    @include view(1900px) {
+        margin-left: fn.rem(390);
+    }
+
+
     .crewTitle {
         @include flexAd(_, fn.rem(16), _, _, center);
+
+        @include view(768px) {
+            justify-content: flex-start;
+        }
     }
 
     .crewTitle span {
@@ -17,35 +38,89 @@
     }
 
     .crewContent {
+        width: 100%;
 
         .crewData {
             @include flex(column, _, fn.rem(32));
 
+            @include view(768px) {
+                flex-direction: column-reverse
+            }
+
+            @include view(1440px) {
+                @include flex(row-reverse, _, fn.rem(32));
+                align-items: center;
+                justify-content: space-between
+            }
+
             .crewTop {
-                @include flex(column, _, _);
+                @include flex(column, 0, 0);
 
                 .crewImg {
                     width: 100%;
                     height: 223px;
                     object-fit: contain;
                     align-self: center;
+
+                    @include view(768px) {
+                        height: 532px;
+                    }
+
+                    @include view(1440px) {
+                        width: 100%;
+                        height: 720px;
+                        align-self: initial;
+                    }
+                    &::hover{
+                        background: #000;
+                    }
+
                 }
 
                 .crewLine {
                     width: 100%;
                     height: 1px;
                     background-color: $abstract;
+
+                    @include view(768px) {
+                        display: none
+                    }
+                }
+
+                @include view(768px) {
+                    margin-top: 44px;
+                }
+
+                @include view(1440px) {
+                    margin-top: 0;
                 }
             }
 
             .crewBottom {
                 @include flex(column, _, fn.rem(32));
 
+                @include view(768px) {
+                    @include flex(column-reverse, _, fn.rem(40));
+                }
+
+                @include view(1440px) {
+                    row-gap: 120px;
+
+                }
+
                 .crewPerson {
                     @include flex(column, _, fn.rem(16));
 
+                    @include view(1440px) {
+                        row-gap: fn.rem(27);
+                    }
+
                     .personTop {
                         @include flex(column, _, fn.rem(8));
+
+                        @include view(1440px) {
+                            row-gap: fn.rem(15);
+                        }
 
                         .crewRole {
                             opacity: .5;
@@ -54,12 +129,23 @@
                     }
 
                     .crewBio {
-                        width: 327px;
+                        min-width: fn.rem(327);
+                        max-width: fn.rem(592);
                         align-self: center;
 
                         @include view-max(350px) {
                             width: 100%;
                         }
+
+                        @include view(1440px) {
+                            width: fn.rem(444);
+                            height: fn.rem(128);
+                            align-self: initial;
+                        }
+                    }
+
+                    &::hover {
+                        cursor: grab;
                     }
                 }
             }

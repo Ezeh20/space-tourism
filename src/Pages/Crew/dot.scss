@@ -1,7 +1,8 @@
 @use '../../scss/global/colors'as *;
+@use '../../scss/utils/_mixins.scss'as *;
 
 .dot-click {
-  
+
     cursor: pointer;
 
     .dot {
@@ -11,6 +12,12 @@
         background: rgba(255, 255, 255, 0.1);
         border-radius: 50%;
         position: relative;
+
+        @include view(768px) {
+            width: 15px;
+            height: 15px;
+            margin-right: 24px;
+        }
 
         &:hover {
             background: rgba(255, 255, 255, 0.5);
@@ -24,6 +31,10 @@
             position: absolute;
             top: -2px;
             left: -2px;
+            @include view(768px) {
+                width: 19px;
+                height: 19px;
+            }
         }
     }
 }

@@ -6,6 +6,7 @@
 .destination {
     background-image: url(/public/images/destination/background-destination-mobile.jpg);
     @include background;
+    overflow: hidden;
 
     @include view(428px) {
         background-image: url(/public/images/destination/background-destination-tablet.jpg);

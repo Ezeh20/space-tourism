@@ -1,0 +1,117 @@
+@use '../../scss/global/colors'as *;
+@use '../../scss/utils/_mixins.scss'as *;
+@use '../../scss/utils/functions'as fn;
+@use '../../scss/utils/fonts'as *;
+
+.technology {
+    background-image: url(/public/images/technology/background-technology-mobile.jpg);
+    @include background;
+    overflow: hidden;
+
+    @include view(428px) {
+        background-image: url(/public/images/technology/background-technology-tablet.jpg);
+    }
+
+    @include view(1024px) {
+        background-image: url(/public/images/technology/background-technology-desktop.jpg);
+    }
+
+    .techContainer {
+        @include flex(column, _, fn.rem(32));
+        margin-block: fn.rem(40);
+
+        @include view(768px) {
+            row-gap: fn.rem(60);
+        }
+
+        .techTitle {
+            @include view(768px) {
+                margin-inline: fn.rem(39);
+            }
+        }
+
+        .techTitle span {
+            opacity: .5;
+            margin-right: fn.rem(16);
+            z-index: -100
+        }
+
+        .techContent {
+            @include flex(column, _, fn.rem(34));
+
+
+            .techTop {
+                display: flex;
+                justify-content: center;
+
+                .imgLandscape {
+                    @include view (1440px) {
+                        display: none;
+                    }
+                }
+
+                .imgPortrait {
+                    display: none;
+
+                    @include view(1440px) {
+                        display: flex;
+                    }
+                }
+            }
+
+            .techBottom {
+                @include flex(column, _, fn.rem(26));
+
+                .techNav {
+                    @include flexAd(row, fn.rem(16), _, center, center);
+                    width: 100%;
+
+                    .navButton {
+                        @include flexAd(column, _, _, center, center);
+                        width: fn.rem(40);
+                        height: fn.rem(40);
+                        font-family: $base-font;
+                        font-size: fn.rem(16);
+                        color: $Basic-white;
+                        border: 1px solid rgba(255, 255, 255, .25);
+                        border-radius: 50%;
+
+                        @include view(768px) {
+                            width: fn.rem(60);
+                            height: fn.rem(60);
+                            font-size: fn.rem(24);
+                        }
+
+                        &:hover {
+                            border: 1px solid rgba(255, 255, 255, 1);
+                            cursor: pointer;
+                        }
+                    }
+
+                    .navButtonActive {
+                        background-color: $Basic-white;
+                        color: $Dark-background;
+                    }
+                }
+
+                .techData {
+                    @include flex(column, _, fn.rem(16));
+
+                    .dataTop {
+                        @include flex(column, _, fn.rem(9));
+                    }
+
+                    .dataBottom {
+                        @include flexAd(_, _, _, _, center);
+                        margin-inline: fn.rem(24);
+
+                        .dataContent {
+                            width: 100%;
+                            max-width: fn.rem(458);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

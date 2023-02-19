@@ -161,9 +161,12 @@
     }
 
     @include view(1440px) {
-        font-size: fn.rem(56);
+        font-size: fn.rem(46);
         line-height: fn.rem(64.18);
         text-align: left;
+    }
+    @include view(1600px) {
+        font-size: fn.rem(56);
     }
 }
 

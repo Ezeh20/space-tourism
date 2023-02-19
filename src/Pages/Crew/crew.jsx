@@ -63,7 +63,13 @@ function CrewContent({ currentPage, direction, setCurrentPage }) {
   }
 
   return (
-    <div className={styles.crewContainer}>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      exit={{ opacity: 0 }}
+      className={styles.crewContainer}
+    >
       <p className={`${styles.crewTitle} menu2`}>
         <span>02</span>MEET YOUR CREW
       </p>
@@ -77,30 +83,35 @@ function CrewContent({ currentPage, direction, setCurrentPage }) {
                 const { webp } = images
                 return (
                   <div key={name} className={styles.crewData}>
-                    <motion.div
-                      data-page={currentPage}
-                      variants={variants}
-                      initial="enter"
-                      animate="active"
-                      exit="exit"
-                      drag="x"
-                      onDrag={detectPaginationGesture}
-                      onDragStart={() => (hasPaginated.current = false)}
-                      onDragEnd={() => (hasPaginated.current = true)}
-                      // Snap the component back to the center if it hasn't paginated
-                      dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
-                      // This will be used for components to resolve all other variants, in
-                      // this case initial and animate.
-                      custom={direction}
-                      className={styles.crewTop}
-                    >
-                      <img
+                    <div className={styles.crewTop}>
+                      <motion.img
+                        data-page={currentPage}
+                        variants={variants}
+                        initial="enter"
+                        animate="active"
+                        exit="exit"
+                        drag="x"
+                        onDrag={detectPaginationGesture}
+                        onTouchStart={detectPaginationGesture}
+                        onTouchMove={() => (hasPaginated.current = false)}
+                        onDragStart={() => (hasPaginated.current = false)}
+                        onDragEnd={() => (hasPaginated.current = true)}
+                        // Snap the component back to the center if it hasn't paginated
+                        dragConstraints={{
+                          left: 0,
+                          right: 0,
+                          top: 0,
+                          bottom: 0,
+                        }}
+                        // This will be used for components to resolve all other variants, in
+                        // this case initial and animate.
+                        custom={direction}
                         src={webp}
                         alt={`${name}`}
                         className={styles.crewImg}
                       />
                       <div className={styles.crewLine} />
-                    </motion.div>
+                    </div>
                     <div className={styles.crewBottom}>
                       <Pagination
                         currentPage={currentPage}
@@ -114,6 +125,8 @@ function CrewContent({ currentPage, direction, setCurrentPage }) {
                         exit="exit"
                         drag="x"
                         onDrag={detectPaginationGesture}
+                        onTouchStart={detectPaginationGesture}
+                        onTouchMove={() => (hasPaginated.current = false)}
                         onDragStart={() => (hasPaginated.current = false)}
                         onDragEnd={() => (hasPaginated.current = true)}
                         // Snap the component back to the center if it hasn't paginated
@@ -143,7 +156,7 @@ function CrewContent({ currentPage, direction, setCurrentPage }) {
           </div>
         </AnimatePresence>
       </div>
-    </div>
+    </motion.div>
   )
 }
 export default CrewContent

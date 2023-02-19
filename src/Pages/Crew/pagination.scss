@@ -1,4 +1,11 @@
+@use '../../scss/utils/_mixins.scss'as *;
+
 .dots {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+
+  @include view(1440px) {
+    justify-content: flex-start;
+    padding-left: .2rem;
   }
+}

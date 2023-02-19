@@ -47,7 +47,7 @@
                 @include view-max(767px) {
                     @include flexAd(column, _, fn.rem(32), initial, initial);
                     position: fixed;
-                    right: -100%;
+                    right: -100rem;
                     top: 0;
                     background: rgba(0, 0, 0, 0.1);
                     transition: all .3s ease-in-out;
@@ -149,6 +149,7 @@
 
             .navListActive {
                 right: 0;
+                z-index: 10;
             }
 
             .ham {
