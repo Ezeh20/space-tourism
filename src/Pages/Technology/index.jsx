@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { motion } from 'framer-motion'
 import Layout from '../../Layout/Layout'
 import styles from './Technology.module.scss'
 import data from '../../../data.json'
@@ -11,7 +12,13 @@ function Technology() {
   const { portrait, landscape } = images
 
   return (
-    <div className={styles.technology}>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      exit={{ opacity: 0 }}
+      className={styles.technology}
+    >
       <Layout>
         <div className={styles.techContainer}>
           <p className={`${styles.techTitle} menu2`}>
@@ -28,7 +35,7 @@ function Technology() {
           </div>
         </div>
       </Layout>
-    </div>
+    </motion.div>
   )
 }
 

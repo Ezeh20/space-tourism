@@ -24,9 +24,24 @@
             row-gap: fn.rem(60);
         }
 
+        @include view(1440px) {
+            margin-left: fn.rem(170);
+            margin-block: fn.rem(80);
+        }
+
+        
+        @include view(1900px) {
+            margin-left: fn.rem(390);
+            margin-block: fn.rem(120);
+        }
+
         .techTitle {
             @include view(768px) {
                 margin-inline: fn.rem(39);
+            }
+
+            @include view(1440px) {
+                margin-inline: fn.rem(0);
             }
         }
 
@@ -39,6 +54,11 @@
         .techContent {
             @include flex(column, _, fn.rem(34));
 
+            @include view(1440px) {
+                flex-direction: row-reverse;
+                align-items: center;
+                justify-content: space-between;
+            }
 
             .techTop {
                 display: flex;
@@ -62,9 +82,21 @@
             .techBottom {
                 @include flex(column, _, fn.rem(26));
 
+                @include view(1440px) {
+                    flex-direction: row;
+                    column-gap: 80px
+                }
+
                 .techNav {
                     @include flexAd(row, fn.rem(16), _, center, center);
-                    width: 100%;
+
+
+                    @include view(1440px) {
+                        justify-content: space-between;
+                        flex-direction: column;
+                        row-gap: fn.rem(32);
+
+                    }
 
                     .navButton {
                         @include flexAd(column, _, _, center, center);
@@ -80,6 +112,12 @@
                             width: fn.rem(60);
                             height: fn.rem(60);
                             font-size: fn.rem(24);
+                        }
+
+                        @include view(1440px) {
+                            width: fn.rem(80);
+                            height: fn.rem(80);
+                            font-size: fn.rem(32);
                         }
 
                         &:hover {
@@ -103,11 +141,20 @@
 
                     .dataBottom {
                         @include flexAd(_, _, _, _, center);
+
+                        @include view(1440px) {
+                            justify-content: flex-start;
+                            margin-inline: fn.rem(0);
+                        }
+
                         margin-inline: fn.rem(24);
 
                         .dataContent {
                             width: 100%;
                             max-width: fn.rem(458);
+                            @include view(1440px){
+                                max-width: fn.rem(444);
+                            }
                         }
                     }
                 }
